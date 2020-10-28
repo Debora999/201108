@@ -7,8 +7,10 @@ public class Math {
 	
 	public List<Integer> primeNumbersGenerator(int n){
 		List<Integer> primeNumbers = new LinkedList<>();
-		if(n>=2)
+		if(n>=2) {
 			primeNumbers.add(2);
+			System.out.println("Modifica");
+		}
 		for(int i = 3; i<=n; i += 2) {
 			if(isPrime(i))
 				primeNumbers.add(i);
@@ -16,10 +18,10 @@ public class Math {
 		return primeNumbers;
 	}
 
-	private boolean isPrime(int number) {
+	public boolean isPrime(int number) {
 		if(number<2)
 			return false;
-		for(int i = 2; i*i<number; i++) {
+		for(int i = 2; i*i<=number; i++) {
 			if(number%i == 0)
 				return false;
 		}
